@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+<script src="lib/codemirror.js"></script>
+<link rel="stylesheet" href="lib/codemirror.css"></link>
+<script src="mode/javascript/javascript.js"></script>
+<form action="#" th:action="@{/index}" th:object="${response}"
+		method="post">
+<textarea id="java" rows="4" cols="50" th:field="*{responseText}"></textarea>
+		
+		<!-- Next Button -->
+			<div class="span7 text-center">
+  				<input type="submit" value="Submit" />
+			</div>
+		
+	</form>	
+	<script src="mode/clike/clike.js"></script>
+	<script>
+    var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("java"), {
+      lineNumbers: true,
+      matchBrackets: true,
+      mode:  "text/x-java"
+    });
+</script>
+<form action="#" th:action="@{/index}" th:object="${response}">
+	<textarea id="java" rows="4" cols="50" th:field="*{responseOutput}"></textarea>
+</form>
+</body>
+</html>
